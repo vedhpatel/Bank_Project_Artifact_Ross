@@ -1,0 +1,22 @@
+FOR USER INTERFACE, RUN `BankAccountMenu` CLASS.
+To get currently signed in user, create a string that is currently passed from `MainMenu` class `MainMenu.loggedInAccountId`.
+All functions of the menu that did not have specified what method/class to call were made with an educated guess. If your program does not run as intended, contact Mario.
+For everything to work properly, it is essential that none of the folders have spaces in the names.
+
+I am very tired.
+
+        ██████████████████
+    ████░░░░░░░░░░░░░░░░░░████
+  ██░░░░░░░░░░░░░░░░░░░░░░░░░░██
+  ██░░░░░░░░░░░░░░░░░░░░░░░░░░██
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+██░░░░██████░░░░██░░░░██████░░░░██
+  ██░░░░░░░░░░██████░░░░░░░░░░██
+████░░██░░░░░░░░░░░░░░░░░░██░░████
+██░░░░██████████████████████░░░░██
+██░░░░░░██░░██░░██░░██░░██░░░░░░██
+  ████░░░░██████████████░░░░████
+      ████░░░░░░░░░░░░░░████
+          ██████████████

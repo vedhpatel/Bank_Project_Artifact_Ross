@@ -1,0 +1,275 @@
+import java.util.Scanner;
+
+import com.csvreader.CsvReader;
+import com.csvreader.CsvWriter;
+
+import java.lang.Math;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;  
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+@SuppressWarnings("all")
+
+public class CMain
+{
+
+public static void main(String[] args) {
+    int amount;
+    Scanner scan = new Scanner(System.in);
+    CreditCard obj = new CreditCard(0,0);
+    CreditLimit lim = new CreditLimit(0,0);
+    CreditScore sco = new CreditScore();
+    
+    CreditCardNumberGenerator ask = new CreditCardNumberGenerator();
+    ClosingCreditCard clo = new ClosingCreditCard();
+    
+    
+    
+    String file = "ccard.csv";
+    // try
+    //         {
+    //             //3585869483921986
+    //             //4968493029185647
+    //             modifyCSV(1986, "770", 1000, "2/22/30", 443, 0, 0); //RESEARCH HOW THIS CAN BE AUTOMATED VIA USER INPUT RATHER THAN HARD CODED
+    //             modifyCSV(5647, "750", 1100, "5/4/32", 325, 0, 0); //RESEARCH HOW THIS CAN BE AUTOMATED VIA USER INPUT RATHER THAN HARD CODED
+    //         } catch(IOException e) 
+    //         {
+    //             e.printStackTrace();
+    //         }
+    //         writeRow(".csv");
+    //         //readCSV("BankProject.csv");
+    
+    
+    
+    obj.setBalance(1000.00);
+    obj.setcscore(350.00);
+    
+    
+    ask.cardnumber();
+    
+    int infinite = 0;
+    while (infinite == 0)
+    {
+    
+    System.out.println("Welcome to the Credit Card Section");
+    System.out.println("Please input a letter below of what you would like to do");
+    System.out.println("a - Payback amounts Due for the Credit Card");
+    System.out.println("b - View Balance");
+    System.out.println("c - View Credit Score");
+    System.out.println("d - View Credit Limit");
+    System.out.println("e - exit");
+    System.out.println("f - close card");
+    String selection = scan.nextLine();
+    
+    if (selection.equals("a"))
+    {
+        obj.purchase(0.0);
+        
+        
+    }
+    if (selection.equals("b"))
+    {
+        System.out.println("Your Balance is: " + obj.getBalance());
+        
+    }
+    if (selection.equals("c"))
+    {
+        sco.creditscore(ask.GetCard());
+        //System.out.println(sco.getcreditscore());
+        
+    }
+    if (selection.equals("d"))
+    {
+        lim.creditlimit(ask.GetCard());
+    }
+    if (selection.equals("e"))
+    {
+        break;
+    }
+    if (selection.equals("f"))
+    {
+        clo.close();
+        break;
+    }
+    }
+    
+		//System.out.println("Initial balance: " + obj.getBalance());
+		//System.out.println("Initial creditcard: " + obj.getcreditscore());
+		//System.out.println("Please enter the amount you spent:");
+		//amount = scan.nextInt();
+		
+		//System.out.println("Your New Balance is: " + obj.getBalance());
+		
+	}
+	// public static void writeCSV(String fileName)
+	// {
+	//     try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName)))
+	//     {
+	//         writer.write("CardNumber, CreditScore, CreditLimit, ExpirationDate, CVC");
+	//         writer.newLine();
+	//         System.out.println("Data has been written to " + fileName);
+	//     }
+	//     catch (IOException e)
+	//     {
+    //         e.printStackTrace();
+    //     }
+	// }
+	// public static void readCSV(String fileName)
+    //     {
+    //         try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
+    //         {
+    //             String line;
+    //             System.out.println("\nReading data from " + fileName + ":");
+    //             while ((line = reader.readLine()) != null)
+    //             {
+    //                 System.out.println(line);
+    //             }
+    //         } catch (IOException e)
+    //         {
+    //             e.printStackTrace();
+    //         }
+    //     }
+    //     public static void modifyCSV(int CardNumber, String CreditScore, int CreditLimit, String ExpirationDate, int CVC, int row, int col) throws IOException
+    //     {
+    //         CreditScore sco = new CreditScore();
+    //         String str = new Double(sco.getcreditscore()).toString();
+    //         File inputFile = new File("BankProject.csv");
+    //         List<String> fileContent = new ArrayList<>();
+            
+    //         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile)))
+    //         {
+    //             String tempLine;
+    //             int tempRow = 0;
+                
+    //             while ((tempLine = reader.readLine()) != null)
+    //             {
+    //                 if (tempRow == row)
+    //                 {
+    //                     String[] newTempLine = tempLine.split(",\\s*");
+    //                     if (col < newTempLine.length)
+    //                     {
+    //                         newTempLine[col] = str;
+    //                     }
+    //                     tempLine = String.join(", ", newTempLine);
+    //                 }
+    //                 fileContent.add(tempLine);
+    //                 tempRow++;
+    //             }
+                
+    //         }
+    //         System.out.println();
+    //         //System.out.println("information in _fileContent_ ArrayList " + fileContent);
+    //         //try (BufferedWriter writer = new BufferedWriter(new FileWriter("BankProject.csv")))
+    //         //{
+    //             //for (String line : fileContent) 
+    //             //{
+    //                 //writer.write(line); 
+    //                 //writer.newLine();
+    //             //}
+    //         //}
+    //         //System.out.println("information in _fileContent_ ArrayList " + fileContent);
+ 
+    //     }
+    //     public static void writeRow(String fileName)
+    //     {
+    //         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true)))
+    //         {
+    //             //3585869483921986
+    //             CreditScore sco = new CreditScore();
+    //             //String[] data = {"3585869483921986", "770", "1000", "2/22/30", "443"};
+    //             String[] data = {"0", "1", "2", "3", "4"};
+    //             String DaScore = Double.toString(sco.getcreditscore());
+    //             data[1] = DaScore;
+    //             String line = String.join(", ", data);
+    //             writer.write(line);
+    //             writer.newLine();
+    //             //System.out.println("Data has been written to " + fileName);
+    //         }
+    //         catch (IOException e)
+    //         {
+    //             e.printStackTrace();
+    //         }
+    //     }
+    public static int searchCsvLine(int searchColumnIndex, String searchString) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("ccard.csv"));
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] values = line.split(",");
+            if (values[searchColumnIndex].equals(searchString)) {
+                return 1;
+            }
+
+        }
+        br.close();
+
+        return 0;
+
+    }
+    
+         public static void writecsv(ArrayList<String[]> csvdata, String filename) throws IOException {
+        CsvWriter writer = new CsvWriter(filename);
+
+        for (String[] record : csvdata) {
+
+            writer.writeRecord(record);
+            writer.flush();
+
+        }
+        writer.close();
+        writer = null;
+    }
+    
+    public static void subsavings(String CardNumber, String CreditScore, String CreditLimit, String ExpirationDate, String CVC, String filename) throws IOException {
+        Scanner keyboard = new Scanner(System.in);
+
+        try {
+            CsvReader reader = new CsvReader(filename);
+
+            int index = 0;
+            ArrayList csvdata = new ArrayList();
+            while (reader.readRecord()) {
+                index++;
+
+                String val1 = reader.get(0);
+                String val2 = reader.get(1);
+                String val3 = reader.get(2);
+                String val4 = reader.get(3);
+                String val5 = reader.get(4);
+                String val6 = reader.get(5);
+
+                // if (val1.equals(CardNumber)) {
+                //     val2 = (Double.parseDouble(val2) - Balance) + "";
+                    
+                // }
+                csvdata.add(new String[] { val1, val2, val3, val4, val5, val6 });
+            }
+
+            reader.close();
+            reader = null;
+
+            writecsv(csvdata, filename);
+            return;
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+        
+        
+        
+}

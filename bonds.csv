@@ -1,0 +1,6 @@
+UserID,Term Length,Bond Interest Rate,Date and Time Purchased,Original Cost of the Bond,
+""
+UserID,Term Length,Bond Interest Rate,Date and Time Purchased,Original Cost of the Bond,
+ACCT,20,0.045,2024-03-11,12100.0,03
+UserID,Term Length,Bond Interest Rate,Date and Time Purchased,Original Cost of the Bond
+ACCT,20,0.045,2024-03-13,1000.0,03,2024
